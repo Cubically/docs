@@ -50,7 +50,95 @@
 <li><a class="reference external" href="layers.html">Inner layers</a></li>
 <li><a class="reference external" href="syntax.html">Syntax</a></li>
 </ul>
-<p>This will be a quick guide but for now it is empty until I decide to make it not that way.</p>
+</div>
+<div class="section" id="quick-guide">
+<span id="quick-guide"></span><h1>Quick guide<a class="headerlink" href="#quick-guide" title="Permalink to this headline">¶</a></h1>
+<p>The quick and dirty guide to Cubically; gets you started with enough to write some code, but not enough to delve into the pain and terror of the language.</p>
+<div class="section" id="what-is-cubically">
+<span id="what-is-cubically"></span><h2>What is “Cubically”?<a class="headerlink" href="#what-is-cubically" title="Permalink to this headline">¶</a></h2>
+<p>Cubically is an <a class="reference external" href="https://en.wikipedia.org/wiki/Esoteric_programming_language">esoteric programming language</a>, meaning that it is intentionally difficult to program in.</p>
+<p>Other esoteric languages may use a <a class="reference external" href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a> or a <a class="reference external" href="https://esolangs.org/wiki/Tape">tape</a> to store data. Cubically, however, uses a Rubik’s Cube and three more <a class="reference external" href="memory.html">memory locations</a> with varying levels of read-write restrictions.</p>
+<p>Cubically specializes in Rubik’s Cubes, so almost all of its <a class="reference external" href="commands.md">commands</a> and functionalities are based around the memory cube. Some, such as XOR and LSHIFT, are really completely useless, but we decided they should be in the language. ¯\<em>(ツ)</em>/¯</p>
+</div>
+<div class="section" id="syntax">
+<span id="syntax"></span><h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<p>Digits are arguments and non-digits are commands. A command can only be one letter long.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">code</span><span class="p">:</span> <span class="n">RL2UD23</span>
+<span class="n">does</span><span class="p">:</span> <span class="n">R</span>       <span class="n">call</span> <span class="n">command</span> <span class="n">R</span> <span class="n">without</span> <span class="n">arguments</span>
+       <span class="n">L2</span>     <span class="n">call</span> <span class="n">command</span> <span class="n">L</span> <span class="k">with</span> <span class="n">argument</span> <span class="mi">2</span>
+         <span class="n">U</span>    <span class="n">call</span> <span class="n">command</span> <span class="n">U</span> <span class="n">without</span> <span class="n">arguments</span>
+          <span class="n">D23</span> <span class="n">call</span> <span class="n">command</span> <span class="n">D</span> <span class="k">with</span> <span class="n">argument</span> <span class="mi">2</span><span class="p">,</span> <span class="n">then</span> <span class="n">argument</span> <span class="mi">3</span> <span class="p">(</span><span class="n">NOT</span> <span class="n">argument</span> <span class="mi">23</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cube-commands">
+<span id="cube-commands"></span><h2>Cube commands<a class="headerlink" href="#cube-commands" title="Permalink to this headline">¶</a></h2>
+<p>Any algorithm, or sequence of moves, in <a class="reference external" href="https://proofwiki.org/wiki/Definition:Singmaster_Notation">Singmaster’s notation</a>, is valid Cubically code.</p>
+<p>|Command|Description|
+|-|-|
+|<code class="docutils literal"><span class="pre">R</span></code>|rotate the right layer of the cube 90<p>°</p>
+ clockwise|
+|<code class="docutils literal"><span class="pre">L</span></code>|rotate the left layer of the cube 90<p>°</p>
+ clockwise|
+|<code class="docutils literal"><span class="pre">U</span></code>|rotate the top  layer of the cube 90<p>°</p>
+ clockwise|
+|<code class="docutils literal"><span class="pre">D</span></code>|rotate the bottom layer of the cube 90<p>°</p>
+ clockwise|
+|<code class="docutils literal"><span class="pre">F</span></code>|rotate the front layer of the cube 90<p>°</p>
+ clockwise|
+|<code class="docutils literal"><span class="pre">B</span></code>|rotate the back layer of the cube 90<p>°</p>
+ clockwise|</p>
+<p>Call any of the above commands with the argument <code class="docutils literal"><span class="pre">2</span></code> for a 180<p>°</p>
+ turn, and the argument <code class="docutils literal"><span class="pre">'</span></code> or <code class="docutils literal"><span class="pre">3</span></code> for a counterclockwise turn.</p>
+</div>
+<div class="section" id="multiple-sizes">
+<span id="multiple-sizes"></span><h2>Multiple sizes<a class="headerlink" href="#multiple-sizes" title="Permalink to this headline">¶</a></h2>
+<p>Since v2.0, Cubically has supported more than just a 3x3x3 for the memory cube. In the interpreter’s command-line invocation, append an argument to specify the size: <code class="docutils literal"><span class="pre">4</span></code> for a 4x4x4 memory cube, or a <code class="docutils literal"><span class="pre">5</span></code> for a 5x5x5, etc.</p>
+<p><strong>But Singmaster’s notation only defines moves for a 3x3x3 D: how can I turn the inner layers of a larger cube?</strong></p>
+<p>Unicode subscripts (<code class="docutils literal"><span class="pre">₀₁₂₃₄₅₆₇₈₉</span></code>) give you the ability to <a class="reference external" href="layers.html">turn the inner layers</a>. For example, <code class="docutils literal"><span class="pre">R</span></code> (performed on a solved 4x4x4) changes the cube’s state to this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    <span class="mi">0002</span>
+    <span class="mi">0002</span>
+    <span class="mi">0002</span>
+    <span class="mi">0002</span>
+<span class="mi">1111222533330444</span>
+<span class="mi">1111222533330444</span>
+<span class="mi">1111222533330444</span>
+<span class="mi">1111222533330444</span>
+    <span class="mi">5554</span>
+    <span class="mi">5554</span>
+    <span class="mi">5554</span>
+    <span class="mi">5554</span>
+</pre></div>
+</div>
+<p>However, performing <code class="docutils literal"><span class="pre">R₁</span></code> on a solved 4x4x4 changes the cube’s state to this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    <span class="mi">0020</span>
+    <span class="mi">0020</span>
+    <span class="mi">0020</span>
+    <span class="mi">0020</span>
+<span class="mi">1111225233334044</span>
+<span class="mi">1111225233334044</span>
+<span class="mi">1111225233334044</span>
+<span class="mi">1111225233334044</span>
+    <span class="mi">5545</span>
+    <span class="mi">5545</span>
+    <span class="mi">5545</span>
+    <span class="mi">5545</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">R</span></code> means “turn the right face 90<p>°</p>
+ clockwise.” So <code class="docutils literal"><span class="pre">R₁</span></code> means “turn the layer 1 inwards from the right face 90<p>°</p>
+ clockwise.”</p>
+<p>These can be pretty fun. Try running <code class="docutils literal"><span class="pre">RR₁'R₂R₃'R₄</span> <span class="pre">UU₁'U₂U₃'U₄</span> <span class="pre">L'L₁L₂'L₃L₄'</span></code>.</p>
+</div>
+<div class="section" id="cubically-sounds-fun-but-how-can-i-actually-use-it">
+<span id="cubically-sounds-fun-but-how-can-i-actually-use-it"></span><h2>Cubically sounds fun, but how can I actually use it?<a class="headerlink" href="#cubically-sounds-fun-but-how-can-i-actually-use-it" title="Permalink to this headline">¶</a></h2>
+<p>You can download the interpreter in the <a class="reference external" href="//git.io/Cubically">GitHub repo</a>. You need GCC and Make installed.</p>
+<p>You can also use the <a class="reference external" href="https://tio.run/##Sy5NykxOzMmp/P8/KOhRU6M6kGgC4mYQo0UhNBQkBiSaQkFioSAxH3UfoCAQN4EYzUDcov7//39TAA">online interpreter</a>, thanks to <a class="reference external" href="https://codegolf.stackexchange.com/users/12012/dennis">Dennis</a> of <a class="reference external" href="//codegolf.stackexchange.com">Programming Puzzles and Code Golf</a>, where you can find many <a class="reference external" href="https://codegolf.stackexchange.com/search?q=cubically+is%3Aanswer">fun Cubically programs</a> in friendly competition.</p>
+</div>
+<div class="section" id="who-s-responsible-for-this-mess">
+<span id="who-s-responsible-for-this-mess"></span><h2>Who’s responsible for this mess?<a class="headerlink" href="#who-s-responsible-for-this-mess" title="Permalink to this headline">¶</a></h2>
+<p>Most of Cubically, such as the interpreter and the documentation, was written by me, a.k.a. MD XF on the internet (<a class="reference external" href="https://codegolf.stackexchange.com/users/61563/md-xf">PPCG</a>, <a class="reference external" href="https://github.com/aaronryank">GitHub</a>). Thanks to the members of the <a class="reference external" href="//github.com/Cubically">Cubically team</a> - Kamil Drakari (<a class="reference external" href="https://codegolf.stackexchange.com/users/71434/kamil-drakari">PPCG</a>, <a class="reference external" href="https://github.com/drakari">GitHub</a>) and TehPers (<a class="reference external" href="https://codegolf.stackexchange.com/users/72489/tehpers">PPCG</a>, <a class="reference external" href="https://github.com/TehPers">GitHub</a>) for valuable contributions.</p>
+</div>
 </div>
 
 
