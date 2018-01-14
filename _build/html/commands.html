@@ -1,0 +1,218 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Commands &#8212; Cubically 3.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="commands">
+<span id="commands"></span><h1>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="index.html">Home</a></li>
+<li><a class="reference external" href="https://cubically.github.io/docs/codepage">Code page</a></li>
+<li><a class="reference external" href="commands.html">Commands</a></li>
+<li><a class="reference external" href="memory.html">Memory</a></li>
+<li><a class="reference external" href="functions.html">Functions</a></li>
+<li><a class="reference external" href="layers.html">Inner layers</a></li>
+<li><a class="reference external" href="syntax.html">Syntax</a></li>
+</ul>
+<div class="section" id="command-types">
+<span id="command-types"></span><h2>Command types<a class="headerlink" href="#command-types" title="Permalink to this headline">¶</a></h2>
+<p>There are three types of commands:</p>
+<ul class="simple">
+<li>Standard commands</li>
+<li>Implicit commands</li>
+<li>Special commands</li>
+</ul>
+<p>Standard commands follow the traditional Cubically syntax - the command sets the default command, and integers call the command with the integer as the argument.</p>
+<p>Implicit commands may be called without arguments, and are executed as soon as they are present.</p>
+<p>Special commands may be called either implicitly or with arguments. See some commands of type <code class="docutils literal"><span class="pre">special</span></code> for examples.</p>
+<p>If a command does not have defined behavior for being called implicitly it will be called with the notepad value - so calling <code class="docutils literal"><span class="pre">+</span></code> implicitly will call <code class="docutils literal"><span class="pre">+6</span></code> (double the notepad).</p>
+</div>
+<div class="section" id="argument-types">
+<span id="argument-types"></span><h2>Argument types<a class="headerlink" href="#argument-types" title="Permalink to this headline">¶</a></h2>
+<p>There are four types of arguments:</p>
+<ul class="simple">
+<li>Standard integers</li>
+<li>Subscript integers</li>
+<li>Superscript integers</li>
+<li>Double-struck integers</li>
+</ul>
+<p>Standard integers simply call the command with its default call type - if the default call type is with face value, then the command will be called with the face sum of the face whose index is specified by the integer. If the default call type is raw integer, then the command will be called with the integer as it appears.</p>
+<p>Subscript integers attach to the current command. When a command is called with subscripts attached, the subscripts act as a second argument, so <code>command<sub>subscript integers</sub>(arguments)</code> acts as <code>command(arguments,subscripts)</code>. Only certain commands may be called with subscript integers, and each command’s behavior differs. See some commands that accept subscript integers for more info.</p>
+<p>Superscript integers are similar to subscript integers, except they attach the face sum of the face whose index is specified by the superscript integer. So calling <code>command<sup>0</sup>(arguments)</code> where the top face’s sum is 5 is like calling <code>command<sub>5</sub>(arguments)</code>.</p>
+<p>When a double-struck integer is present, it executes the command (using default call type) with the face sum of the face whose index is specified by the double-struct integer. So <code>command<p>𝟘</p>
+</code> where the top face sum is 1 is like calling <code class="docutils literal"><span class="pre">command</span></code> with raw integer 1.</p>
+</div>
+</div>
+<div class="section" id="commands">
+<span id="id1"></span><h1>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="memory">
+<span id="memory"></span><h2>Memory<a class="headerlink" href="#memory" title="Permalink to this headline">¶</a></h2>
+<p>|Command|Type|Description|Call type|Accepts|Arguments|
+|-|-|-|-|-|-|
+|<code class="docutils literal"><span class="pre">R</span></code>|Special|turn right cube face clockwise 90<p>°</p>
+|Raw|standard, subscript, superscript, double-struck|number of turns, <code class="docutils literal"><span class="pre">'</span></code> for 3, implicit for 1|
+|<code class="docutils literal"><span class="pre">L</span></code>|Special|turn left cube face clockwise 90<p>°</p>
+|Raw|^|^|
+|<code class="docutils literal"><span class="pre">U</span></code>|Special|turn top cube face clockwise 90<p>°</p>
+|Raw|^|^|
+|<code class="docutils literal"><span class="pre">D</span></code>|Special|turn bottom cube face clockwise 90<p>°</p>
+|Raw|^|^|
+|<code class="docutils literal"><span class="pre">F</span></code>|Special|turn front cube face clockwise 90<p>°</p>
+|Raw|^|^|
+|<code class="docutils literal"><span class="pre">B</span></code>|Special|turn back cube face clockwise 90<p>°</p>
+|Raw|^|^|
+|<code class="docutils literal"><span class="pre">M</span></code>|Special|turn the middle face (left-oriented) clockwise 90<p>°</p>
+|Raw|^|^|
+|<code class="docutils literal"><span class="pre">E</span></code>|Special|turn the middle face (down-oriented) clockwise 90<p>°</p>
+|Raw|^|^|
+|<code class="docutils literal"><span class="pre">S</span></code>|Special|turn the middle face (front-oriented) clockwise 90<p>°</p>
+|Raw|^|^|</p>
+<p>Subscript integers (and superscript face values) denote the layer to be turned. That is, when a face turn is called with subscript <code class="docutils literal"><span class="pre">x</span></code>, the <code class="docutils literal"><span class="pre">x</span></code>th layer inward from the face will be rotated instead of just the face.</p>
+</div>
+<div class="section" id="general-math">
+<span id="general-math"></span><h2>General/math<a class="headerlink" href="#general-math" title="Permalink to this headline">¶</a></h2>
+<p>|Command|Type|Description|Call type|Accepts|Arguments|
+|-|-|-|-|-|-|
+|<code class="docutils literal"><span class="pre">&amp;</span></code>|Special|exit if specified face sum/value is truthy|face value|standard|face index (0-8), implicit exits unconditionally|
+|<code class="docutils literal"><span class="pre">+</span></code>|Standard|add all values of specified face together, add to notepad value, write result on notepad|face value|standard|face index (0-8)|
+|<code class="docutils literal"><span class="pre">-</span></code>|Standard|add all values of specified face together, subtract from notepad value, write result on notepad|face value|standard|^|
+|<code class="docutils literal"><span class="pre">*</span></code>|Standard|add all values of specified face together, multiply by notepad value, write result on notepad|face value|standard|^|
+|<code class="docutils literal"><span class="pre">/</span></code>|Standard|add all values of specified face together, divide notepad value by, write result on notepad|face value|standard|^|
+|<code class="docutils literal"><span class="pre">_</span></code>|Standard|set notepad to (notepad modulo faceval)|face value|standard|^|
+|<code class="docutils literal"><span class="pre">^</span></code>|Standard|set the notepad value to (notepad ^ faceval) where ^ represents the exponent|face value|standard|^|
+|<code class="docutils literal"><span class="pre">=</span></code>|Standard|compare notepad and specified face for equality, write result on notepad|face value|standard|^|
+|<code class="docutils literal"><span class="pre">&lt;</span></code>|Standard|set the notepad to (notepad &lt; faceval)|face value|standard|^|
+|<code class="docutils literal"><span class="pre">&gt;</span></code>|Standard|set the notepad to (notepad &gt; faceval)|face value|standard|^|
+|<code><p>⊕</p>
+</code>|Standard|set the notepad to (notepad ^ faceval) where ^ represents the logical XOR|face value|standard|^|
+|<code><p>«</p>
+</code>|Standard|set the notepad to (notepad &lt;&lt; faceval)|face value|standard|^|
+|<code><p>»</p>
+</code>|Standard|set the notepad to (notepad &gt;&gt; faceval)|face value|standard|^|
+|<code><p>·</p>
+</code>|Standard|set the notepad to (notepad <p>·</p>
+ faceval) where <p>·</p>
+ represents the logical AND|face value|standard|^|
+|<code class="docutils literal"><span class="pre">|</span></code>|Standard|set the notepad to (notepad | faceval) where <code class="docutils literal"><span class="pre">|</span></code> represents the logical OR|face value|standard|^|
+|<code class="docutils literal"><span class="pre">:</span></code>|Standard|set notepad to specified face index’s sum|^|
+|<code class="docutils literal"><span class="pre">¶</span></code>|Standard|Read a string and evaluate it|N/A|standard|None, call implicitly|</p>
+</div>
+<div class="section" id="i-o">
+<span id="i-o"></span><h2>I/O<a class="headerlink" href="#i-o" title="Permalink to this headline">¶</a></h2>
+<p>|Command|Type|Description|Call type|Accepts|Arguments|
+|-|-|-|-|-|-|
+|<code class="docutils literal"><span class="pre">&#64;</span></code>|Standard|add all values of specified face together, print as ASCII|face value|standard|face index (0-7), implicit for 6|
+|<code class="docutils literal"><span class="pre">%</span></code>|Standard|add all values of specified face together, print as decimal|face value|standard|^|
+|<code class="docutils literal"><span class="pre">$</span></code>|Standard|input integer, store in input buffer (index 7)|raw|standard|implicit. when called with number, perform that many times|
+|<code class="docutils literal"><span class="pre">~</span></code>|Standard|input character, store in input buffer (index 7)|raw|standard|^|</p>
+</div>
+<div class="section" id="loops">
+<span id="loops"></span><h2>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h2>
+<p>|Command|Type|Description|Call type|Accepts|Arguments|
+|-|-|-|-|-|-|
+|<code class="docutils literal"><span class="pre">(</span></code>|Special|create jump point with arguments. if none, create a point that can be jumped to freely. with face indexes, create a point that can be jumped to if any provided face has a truthy sum.|face value|standard|any number of face indexes (0-7)|
+|<code class="docutils literal"><span class="pre">)</span></code>|Special|jump back to previous jump point with arguments. if none, jump back if previous jump point can be jumped to. with face indexes, jump to previous point if both it can be jumped to and if every provided face has a truthy sum.|face value|standard|^|</p>
+<p>A better explanation of loops:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">(...)</span></code> will be an infinite loop.</li>
+<li><code class="docutils literal"><span class="pre">(0...)</span></code> loops as long as the top face has a nonzero sum.</li>
+<li><code class="docutils literal"><span class="pre">(12...)34</span></code> is a loop as long as both <code class="docutils literal"><span class="pre">1</span> <span class="pre">||</span> <span class="pre">2</span></code> and <code class="docutils literal"><span class="pre">3</span> <span class="pre">||</span> <span class="pre">4</span></code> is truthy. (numbers are face indexes)</li>
+</ul>
+</div>
+<div class="section" id="conditionals">
+<span id="conditionals"></span><h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h2>
+<p>|Command|Type|Description|Call type|Accepts|Arguments|
+|-|-|-|-|-|-|
+|<code class="docutils literal"><span class="pre">?</span></code>|Standard|execute next command or code block if specified face is truthy|face value|standard|face index (0-7)|
+|<code class="docutils literal"><span class="pre">!</span></code>|Special|execute next command or code block if specified face is falsy. also can be used as if-else statement as specified below|face value|standard|face index (0-7) or nothing|
+|<code class="docutils literal"><span class="pre">{</span></code>|Implicit|open a code block|N/A|N/A|N/A|
+|<code class="docutils literal"><span class="pre">}</span></code>|Implicit|close a code block|N/A|N/A|N/A|</p>
+</div>
+<div class="section" id="functions">
+<span id="functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>|Command|Type|Description|Call type|Accepts|Arguments|
+|-|-|-|-|-|-|
+|<code class="docutils literal"><span class="pre">f</span></code>|Standard|execute function specified in argument|raw|standard|function to call|</p>
+<p>See <a class="reference external" href="functions.html">Functions</a> for more information.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, MD XF.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/commands.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

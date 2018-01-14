@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Cubically’s Documentation &#8212; Cubically 3.1 documentation</title>
+    <title>Functions &#8212; Cubically 3.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -39,8 +39,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="cubically-s-documentation">
-<span id="cubically-s-documentation"></span><h1>Cubically’s Documentation<a class="headerlink" href="#cubically-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="functions">
+<span id="functions"></span><h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="index.html">Home</a></li>
 <li><a class="reference external" href="https://cubically.github.io/docs/codepage">Code page</a></li>
@@ -50,7 +50,24 @@
 <li><a class="reference external" href="layers.html">Inner layers</a></li>
 <li><a class="reference external" href="syntax.html">Syntax</a></li>
 </ul>
-<p>This will be a quick guide but for now it is empty until I decide to make it not that way.</p>
+<p>Cubically v3.1 has support for functions. A function definition starts with <code class="docutils literal"><span class="pre">⇒</span></code> (codepage 0x84) and ends in a newline (codepage 0x20). Functions do not have conventional names, such as <code class="docutils literal"><span class="pre">foo</span></code> or <code class="docutils literal"><span class="pre">print</span></code>. Instead they have integers for names. For example, this defines function 1 as <code class="docutils literal"><span class="pre">R2L2</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>⇒R2L2
+</pre></div>
+</div>
+<p>This defines function 1 as <code class="docutils literal"><span class="pre">R2L2</span></code>, function 2 as <code class="docutils literal"><span class="pre">U2D2</span></code>, and function 3 as <code class="docutils literal"><span class="pre">F2B2</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>⇒R2L2
+⇒U2D2
+⇒F2B2
+</pre></div>
+</div>
+<p>Functions are called with the <code class="docutils literal"><span class="pre">f</span></code> command. For example, this code executes <code class="docutils literal"><span class="pre">R2L2U2D2F2B2</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>⇒ R2L2
+⇒ U2D2
+⇒ F2B2
+f1 f2 f3
+</pre></div>
+</div>
+<p>Whitespace added for clarity.</p>
 </div>
 
 
@@ -61,7 +78,7 @@
         <div class="sphinxsidebarwrapper"><div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="#">Documentation overview</a><ul>
+  <li><a href="index.html">Documentation overview</a><ul>
   </ul></li>
 </ul>
 </div>
@@ -87,7 +104,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/index.md.txt"
+      <a href="_sources/functions.md.txt"
           rel="nofollow">Page source</a>
     </div>
 

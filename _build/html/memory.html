@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Cubically’s Documentation &#8212; Cubically 3.1 documentation</title>
+    <title>Memory &#8212; Cubically 3.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -39,8 +39,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="cubically-s-documentation">
-<span id="cubically-s-documentation"></span><h1>Cubically’s Documentation<a class="headerlink" href="#cubically-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="memory">
+<span id="memory"></span><h1>Memory<a class="headerlink" href="#memory" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="index.html">Home</a></li>
 <li><a class="reference external" href="https://cubically.github.io/docs/codepage">Code page</a></li>
@@ -50,7 +50,48 @@
 <li><a class="reference external" href="layers.html">Inner layers</a></li>
 <li><a class="reference external" href="syntax.html">Syntax</a></li>
 </ul>
-<p>This will be a quick guide but for now it is empty until I decide to make it not that way.</p>
+<p>Cubically has a unique memory structure. The memory is a Rubik’s cube. Various commands perform operations on this cube, such as turning the right face clockwise by 90 degrees. Other commands perform operations on certain faces of the cube, like adding all values on the top face together and storing them on the notepad (see below).</p>
+<p>The six faces of the cube are initialized with the numbers 0 through 5, like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>   <span class="mi">000</span>
+   <span class="mi">000</span>
+   <span class="mi">000</span>
+<span class="mi">111222333444</span>
+<span class="mi">111222333444</span>
+<span class="mi">111222333444</span>
+   <span class="mi">555</span>
+   <span class="mi">555</span>
+   <span class="mi">555</span>
+</pre></div>
+</div>
+<p>After performing a clockwise 90° turn on the right face, the memory cube would look like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>   <span class="mi">002</span>
+   <span class="mi">002</span>
+   <span class="mi">002</span>
+<span class="mi">111225333044</span>
+<span class="mi">111225333044</span>
+<span class="mi">111225333044</span>
+   <span class="mi">554</span>
+   <span class="mi">554</span>
+   <span class="mi">554</span>
+</pre></div>
+</div>
+<p>To make Cubically an (almost) usable language, there is one piece of fully read-writeable memory: the “notepad”, which is a single-value register. This can store one value at a time. Performing a command on the nonexistent sixth face index will perform the command on the notepad. So, for example, <code class="docutils literal"><span class="pre">+6</span></code> will add the notepad to itself.</p>
+<p>Input is performed using the nonexistent seventh-indexed face. When input is read it is stored there and can be accessed by all commands that access face indexes. It is not changed until input is read again. It is initialized to zero.</p>
+<p>The 8th indexed face contains a non-writeable boolean. It is always false if the cube is solved, and always true otherwise.</p>
+</div>
+<div class="section" id="memory-locations">
+<span id="memory-locations"></span><h1>Memory locations<a class="headerlink" href="#memory-locations" title="Permalink to this headline">¶</a></h1>
+<p>|Memory location|Data|Visualizer color|
+|-|-|-|
+|0|top face|red|
+|1|left face|blue|
+|2|front face|purple|
+|3|right face|green|
+|4|back face|blue|
+|5|bottom face|yellow|
+|6|notepad|N/A|
+|7|input buffer|N/A|
+|8|cube is unsolved? (true/false)|N/A|</p>
 </div>
 
 
@@ -61,7 +102,7 @@
         <div class="sphinxsidebarwrapper"><div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="#">Documentation overview</a><ul>
+  <li><a href="index.html">Documentation overview</a><ul>
   </ul></li>
 </ul>
 </div>
@@ -87,7 +128,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/index.md.txt"
+      <a href="_sources/memory.md.txt"
           rel="nofollow">Page source</a>
     </div>
 

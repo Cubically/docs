@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Cubically’s Documentation &#8212; Cubically 3.1 documentation</title>
+    <title>Turning inner layers &#8212; Cubically 3.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -39,8 +39,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="cubically-s-documentation">
-<span id="cubically-s-documentation"></span><h1>Cubically’s Documentation<a class="headerlink" href="#cubically-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="turning-inner-layers">
+<span id="turning-inner-layers"></span><h1>Turning inner layers<a class="headerlink" href="#turning-inner-layers" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="index.html">Home</a></li>
 <li><a class="reference external" href="https://cubically.github.io/docs/codepage">Code page</a></li>
@@ -50,7 +50,55 @@
 <li><a class="reference external" href="layers.html">Inner layers</a></li>
 <li><a class="reference external" href="syntax.html">Syntax</a></li>
 </ul>
-<p>This will be a quick guide but for now it is empty until I decide to make it not that way.</p>
+<p><code class="docutils literal"><span class="pre">RₙX</span></code>, where <code class="docutils literal"><span class="pre">n</span></code> is a subscript number, means:</p>
+<blockquote>
+<div>perform X clockwise right turns on the n’th layer inward from the right face</div></blockquote>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Code: R₀2 (equivalent to R2)
+Cube (3x3): 
+   005
+   005
+   005
+111224333244
+111224333244
+111224333244
+   550
+   550
+   550
+
+Code: R₁2
+Cube (3x3):
+   050
+   050
+   050
+111242333424
+111242333424
+111242333424
+   505
+   505
+   505
+Cube (4x4):
+    0050
+    0050
+    0050
+    0050
+1111224233334244
+1111224233334244
+1111224233334244
+1111224233334244
+    5505
+    5505
+    5505
+    5505
+</pre></div>
+</div>
+<p>If <code class="docutils literal"><span class="pre">n</span></code> is larger than or equal to the size of the cube, it will act as a no-op. For example, <code class="docutils literal"><span class="pre">R³2</span></code> on a 3x3x3 would be a no-op, but on a 4x4x4, it would turn the third face inward from the right face.</p>
+<p><code class="docutils literal"><span class="pre">RⁿX</span></code>, where <code class="docutils literal"><span class="pre">n</span></code> is a superscript number, means:</p>
+<blockquote>
+<div>perform X clockwise turns on the m’th layer inward from the right face, where m is the face sum of n-indexed face</div></blockquote>
+<p>So, if the notepad was 1, <code>R<p>⁶</p>
+2</code> would turn the middle face on a 3x3x3 twice.</p>
+<p>Combining superscripts and subscripts will result in undefined behavior. Each version of the interpreter handles sub/superscript integration differently. You should never combine subscripts and superscripts in the same command so the behavior will never be defined.</p>
 </div>
 
 
@@ -61,7 +109,7 @@
         <div class="sphinxsidebarwrapper"><div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="#">Documentation overview</a><ul>
+  <li><a href="index.html">Documentation overview</a><ul>
   </ul></li>
 </ul>
 </div>
@@ -87,7 +135,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/index.md.txt"
+      <a href="_sources/layers.md.txt"
           rel="nofollow">Page source</a>
     </div>
 

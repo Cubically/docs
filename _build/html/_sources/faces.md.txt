@@ -1,0 +1,22 @@
+# Faces
+
+ - [Home](index.html)
+ - [Code page](https://cubically.github.io/docs/codepage.html)
+ - [Commands](commands.html)
+ - [Faces](faces.html)
+ - [Functions](functions.html)
+ - [Inner layers](layers.html)
+ - [Memory](memory.html)
+ - [Syntax](syntax.html)
+
+|Index|Face|Visualizer color|
+|-|-|-|
+|0|up (top)|red|
+|1|left|blue|
+|2|front|purple|
+|3|right|green|
+|4|back|blue|
+|5|down (bottom)|yellow|
+|6|notepad|N/A|
+|7|input buffer|N/A|
+|8|cube is *not* solved (true/false)|N/A|
