@@ -1,6 +1,12 @@
 # Commands
 
-...
+ - [Home](index.html)
+ - [Code page](https://cubically.github.io/docs/codepage)
+ - [Commands](commands.html)
+ - [Memory](memory.html)
+ - [Functions](functions.html)
+ - [Inner layers](layers.html)
+ - [Syntax](syntax.html)
 
 Below you can find a table of all Cubically's commands.
 
@@ -23,7 +29,12 @@ Below you can find a table of all Cubically's commands.
 |`E`|`MID_D`|rotate the middle layer inwards from the bottom face 90&deg; clockwise *n* times|*n* = 1|
 |`S`|`MID_F`|rotate the middle layer inwards from the front face 90&deg; clockwise *n* times|*n* = 1|
 
-**Note:** In the cube commands, `'` is synonymous to `3` in source code.
+There are two things notable about cube commands:
+
+ - `'` is synonymous to `3` in source code.
+ - Commands can have subscripts and superscripts attached to them. For more information, see [turning inner 
+
+layers](layers.html).
 
 ### General
 
