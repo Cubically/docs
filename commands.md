@@ -40,19 +40,19 @@ There are two things notable about cube commands:
 |-|-|-|-|
 |`&`|`EXIT`|exit if the value of memory location *n* is nonzero|*n* = 6|
 |`+`|`ADD`|notepad `+=` memory location *n*|*n* = 6|
-|`-`|`SUB`|notepad `-=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`-`|`SUB`|notepad `-=` memory location *n*|*n* = 7|
 |`*`|`MUL`|notepad `*=` memory location *n*|*n* = 6|
-|`/`|`DIV`|notepad `/=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`_`|`MOD`|notepad `%=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`/`|`DIV`|notepad `/=` memory location *n*|*n* = 7|
+|`_`|`MOD`|notepad `%=` memory location *n*|*n* = 6|
 |`^`|`POW`|notepad `**=` memory location *n*|*n* = 6|
 |`=`|`EQ`|notepad = (notepad == memory location *n*)|*n* = 7|
-|`<`|`LT`|notepad = (notepad < memory location *n*)|*n* = 7|PROBABLY|
-|`>`|`GT`|notepad = (notepad > memory location *n*)|*n* = 7|PROBABLY
-|`⊕`|`XOR`|notepad = (notepad ⊕ memory location *n*)|*n* = 6|USELESS IMPLICITLY|
-|`«`|`LSHIFT`|notepad `<<=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`»`|`RSHIFT`|notepad `>>=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`·`|`AND`|notepad `&=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`` | ``|`OR`|notepad `` |= `` memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`<`|`LT`|notepad = (notepad < memory location *n*)|*n* = 7|
+|`>`|`GT`|notepad = (notepad > memory location *n*)|*n* = 7|
+|`⊕`|`XOR`|notepad = (notepad ⊕ memory location *n*)|*n* = 6|
+|`«`|`LSHIFT`|notepad `<<=` memory location *n*|*n* = 6|
+|`»`|`RSHIFT`|notepad `>>=` memory location *n*|*n* = 6|
+|`·`|`AND`|notepad `&=` memory location *n*|*n* = 6|
+|`` | ``|`OR`|notepad `` |= `` memory location *n*|*n* = 6|
 |`:`|`SET`|notepad = memory location *n*|*n* = 7|
 
 ### I/O
