@@ -89,6 +89,28 @@ However, performing `R₁` on a solved 4x4x4 changes the cube's state to this:
 
 These can be pretty fun. Try [running][TIO-1] `RR₁'R₂R₃'R₄ UU₁'U₂U₃'U₄ L'L₁L₂'L₃L₄'` on a 5x5x5.
 
+### But how do I interact with the cube?
+
+When I first made Cubically, with the memory cube alone and no other way to store data, it was nothing but a console emulator for a Rubik's Cube. However, I decided I wanted to turn it into an esoteric programming language, so I added one more piece of memory, the notepad. The value "written" on the notepad could be modified based on the different states of the cube. So I introduced the concept of [memory locations](memory.html). Memory location `0` would always store the sum of the top face of the cube (the face that's filled with `0`s when the cube is unsolved). Memory location `1` would always store the sum of the left face, `2` stored the right face sum, etc.
+
+Try scrambling up the cube and running `:1 %6` - `:1` to set the notepad to the sum of the left face, and `%6` to print the notepad (memory location `6`). What did it print? Try a different scramble with the same `:1 %6` at the end. See what different values you can get!
+
+For ease of use, Cubically automatically dumps the memory cube and the notepad at the end of the program. For example, after running the code `R2L2U2D2F2B2`, Cubically prints this:
+
+```
+Notepad: 0
+
+   050
+   505
+   050
+131242313424
+313424131242
+131242313424
+   505
+   050
+   505
+```
+
 ### Cubically sounds fun, but how can I actually use it?
 
 You can download the interpreter in the [GitHub repo][cubically-git]. You need [GCC] and [Make] installed.

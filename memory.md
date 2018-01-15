@@ -44,12 +44,12 @@ The 8th indexed face contains a non-writeable boolean. It is always false if the
 
 |Memory location|Data|Visualizer color|
 |-|-|-|
-|0|top face|red|
-|1|left face|blue|
-|2|front face|purple|
-|3|right face|green|
-|4|back face|blue|
-|5|bottom face|yellow|
+|0|top face sum|red|
+|1|left face sum|blue|
+|2|front face sum|purple|
+|3|right face sum|green|
+|4|back face sum|blue|
+|5|bottom face sum|yellow|
 |6|notepad|N/A|
 |7|input buffer|N/A|
 |8|cube is unsolved? (true/false)|N/A|

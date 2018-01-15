@@ -8,7 +8,7 @@
  - [Inner layers](layers.html)
  - [Syntax](syntax.html)
 
-`RₙX`, where `n` is a subscript number, means:
+`RₙX`, where `n` is a subscript number and `X` is a digit, means:
 
  > perform X clockwise right turns on the n'th layer inward from the right face
 
@@ -53,9 +53,9 @@ Examples:
 
 If `n` is larger than or equal to the size of the cube, it will act as a no-op. For example, `R³2` on a 3x3x3 would be a no-op, but on a 4x4x4, it would turn the third face inward from the right face.
 
-`RⁿX`, where `n` is a superscript number, means:
+`RⁿX`, where `n` is a superscript number and `X` is a digit, means:
 
- > perform X clockwise turns on the m'th layer inward from the right face, where m is the face sum of n-indexed face
+ > perform X clockwise turns on the m'th layer inward from the right face, where m is the value of memory location n.
  
  So, if the notepad was 1, <code>R&#x2076;2</code> would turn the middle face on a 3x3x3 twice.
  
