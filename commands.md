@@ -41,20 +41,20 @@ layers](layers.html).
 |Char|Name|Arg *n*|Implicit|
 |-|-|-|-|
 |`&`|`EXIT`|exit if the value of memory location *n* is nonzero|*n* = 6|
-|`+`|`ADD`|notepad += memory location *n*|*n* = 6|
-|`-`|`SUB`|notepad -= memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`*`|`MUL`|notepad *= memory location *n*|*n* = 6|
-|`/`|`DIV`|notepad /= memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`_`|`MOD`|notepad %= memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`^`|`POW`|notepad **= memory location *n*|*n* = 6|
+|`+`|`ADD`|notepad `+=` memory location *n*|*n* = 6|
+|`-`|`SUB`|notepad `-=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`*`|`MUL`|notepad `*=` memory location *n*|*n* = 6|
+|`/`|`DIV`|notepad `/=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`_`|`MOD`|notepad `%=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`^`|`POW`|notepad `**=` memory location *n*|*n* = 6|
 |`=`|`EQ`|notepad = (notepad == memory location *n*)|*n* = 7|
 |`<`|`LT`|notepad = (notepad < memory location *n*)|*n* = 7|PROBABLY|
 |`>`|`GT`|notepad = (notepad > memory location *n*)|*n* = 7|PROBABLY
 |`⊕`|`XOR`|notepad = (notepad ⊕ memory location *n*)|*n* = 6|USELESS IMPLICITLY|
-|`«`|`LSHIFT`|notepad <<= memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`»`|`RSHIFT`|notepad >>= memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`·`|`AND`|notepad &= memory location *n*|*n* = 6|USELESS IMPLICITLY|
-|`` | ``|`OR`|notepad \|= memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`«`|`LSHIFT`|notepad `<<=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`»`|`RSHIFT`|notepad `>>=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`·`|`AND`|notepad `&=` memory location *n*|*n* = 6|USELESS IMPLICITLY|
+|`` | ``|`OR`|notepad `` |= `` memory location *n*|*n* = 6|USELESS IMPLICITLY|
 |`:`|`SET`|notepad = memory location *n*|*n* = 7|
 
 ### I/O
