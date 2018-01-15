@@ -8,7 +8,7 @@
  - [Inner layers](layers.html)
  - [Syntax](syntax.html)
 
-Below you can find a table of all Cubically's commands.
+Below are tables containing Cubically's commands. You can find them all formatted in a simple table in the [quick reference](quickref.html).
 
  - **Name** - the short, capitalized name of the command
  - **Char** - the character(s) in the source that call the command
