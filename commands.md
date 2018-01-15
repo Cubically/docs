@@ -32,9 +32,7 @@ Below you can find a table of all Cubically's commands.
 There are two things notable about cube commands:
 
  - `'` is synonymous to `3` in source code.
- - Commands can have subscripts and superscripts attached to them. For more information, see [turning inner 
-
-layers](layers.html).
+ - Commands can have subscripts and superscripts attached to them. For more information, see [turning inner layers](layers.html).
 
 ### General
 
