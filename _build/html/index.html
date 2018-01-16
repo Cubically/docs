@@ -53,16 +53,16 @@
 </div>
 <div class="section" id="quick-guide">
 <span id="quick-guide"></span><h1>Quick guide<a class="headerlink" href="#quick-guide" title="Permalink to this headline">¶</a></h1>
-<p>The quick and dirty guide to Cubically; gets you started with enough to write some code, but not enough to delve into the pain and terror of the language.</p>
+<p>This quick guide will get you started with enough to write some code, but not enough to delve into the pain and terror of the language.</p>
 <div class="section" id="what-is-cubically">
 <span id="what-is-cubically"></span><h2>What is “Cubically”?<a class="headerlink" href="#what-is-cubically" title="Permalink to this headline">¶</a></h2>
 <p>Cubically is an <a class="reference external" href="https://en.wikipedia.org/wiki/Esoteric_programming_language">esoteric programming language</a>, meaning that it is intentionally difficult to program in.</p>
-<p>Other esoteric languages may use a <a class="reference external" href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a> or a <a class="reference external" href="https://esolangs.org/wiki/Tape">tape</a> to store data. Cubically, however, uses a Rubik’s Cube and three more <a class="reference external" href="memory.html">memory locations</a> with varying levels of read-write restrictions.</p>
-<p>Cubically specializes in Rubik’s Cubes, so almost all of its <a class="reference external" href="commands.md">commands</a> and functionalities are based around the memory cube. Some, such as XOR and LSHIFT, are really completely useless, but we decided they should be in the language. ¯\<em>(ツ)</em>/¯</p>
+<p>Other esoteric languages may use a <a class="reference external" href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a> or a <a class="reference external" href="https://esolangs.org/wiki/Tape">tape</a> to store data. Cubically, however, uses a built-in Rubik’s Cube and three more <a class="reference external" href="memory.html">memory locations</a> with varying levels of read-write restrictions.</p>
+<p>Cubically specializes in Rubik’s Cubes, so almost all of its <a class="reference external" href="commands.html">commands</a> and functionalities are based around the memory cube. Some, such as XOR and LSHIFT, are really completely useless, but we decided they should be in the language. <code class="docutils literal"><span class="pre">¯\_(ツ)_/¯</span></code></p>
 </div>
 <div class="section" id="syntax">
 <span id="syntax"></span><h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<p>Digits are arguments and non-digits are commands. A command can only be one letter long.</p>
+<p>Digits are arguments and non-digits are commands. A command can only be one letter long. (That rule, which you still need to know, is broken so many times it’s not even funny.)</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">code</span><span class="p">:</span> <span class="n">RL2UD23</span>
 <span class="n">does</span><span class="p">:</span> <span class="n">R</span>       <span class="n">call</span> <span class="n">command</span> <span class="n">R</span> <span class="n">without</span> <span class="n">arguments</span>
        <span class="n">L2</span>     <span class="n">call</span> <span class="n">command</span> <span class="n">L</span> <span class="k">with</span> <span class="n">argument</span> <span class="mi">2</span>
@@ -93,9 +93,9 @@
 </div>
 <div class="section" id="multiple-sizes">
 <span id="multiple-sizes"></span><h2>Multiple sizes<a class="headerlink" href="#multiple-sizes" title="Permalink to this headline">¶</a></h2>
-<p>Since v2.0, Cubically has supported more than just a 3x3x3 for the memory cube. In the interpreter’s command-line invocation, append an argument to specify the size: <code class="docutils literal"><span class="pre">4</span></code> for a 4x4x4 memory cube, or a <code class="docutils literal"><span class="pre">5</span></code> for a 5x5x5, etc.</p>
+<p>Since <a class="reference external" href="https://github.com/aaronryank/Cubically/releases/tag/v2.0">v2.0</a>, Cubically has supported more than just a 3x3x3 for the memory cube. In the interpreter’s command-line invocation, append an argument to specify the size: <code class="docutils literal"><span class="pre">4</span></code> for a 4x4x4 memory cube, or a <code class="docutils literal"><span class="pre">5</span></code> for a 5x5x5, etc.</p>
 <p><strong>But Singmaster’s notation only defines moves for a 3x3x3 D: how can I turn the inner layers of a larger cube?</strong></p>
-<p>Unicode subscripts (<code class="docutils literal"><span class="pre">₀₁₂₃₄₅₆₇₈₉</span></code>) give you the ability to <a class="reference external" href="layers.html">turn the inner layers</a>. For example, <code class="docutils literal"><span class="pre">R</span></code> (performed on a solved 4x4x4) changes the cube’s state to this:</p>
+<p>Unicode subscripts (<code class="docutils literal"><span class="pre">₀₁₂₃₄₅₆₇₈₉</span></code>), while breaking the “a command can only be one character long” rule, give you the ability to <a class="reference external" href="layers.html">turn the inner layers</a>. For example, <code class="docutils literal"><span class="pre">R</span></code> (performed on a solved 4x4x4) changes the cube’s state to this:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>    <span class="mi">0002</span>
     <span class="mi">0002</span>
     <span class="mi">0002</span>
@@ -128,11 +128,30 @@
 <p><code class="docutils literal"><span class="pre">R</span></code> means “turn the right face 90<p>°</p>
  clockwise.” So <code class="docutils literal"><span class="pre">R₁</span></code> means “turn the layer 1 inwards from the right face 90<p>°</p>
  clockwise.”</p>
-<p>These can be pretty fun. Try running <code class="docutils literal"><span class="pre">RR₁'R₂R₃'R₄</span> <span class="pre">UU₁'U₂U₃'U₄</span> <span class="pre">L'L₁L₂'L₃L₄'</span></code>.</p>
+<p>These can be pretty fun. Try <a class="reference external" href="https://tio.run/##Sy5NykxOzMmp/P8/KOhRU6M6kGgC4mYQo0UhNBQkBiSaQkFioSAxH3UfoCAQN4EYzUDcov7//39TAA">running</a> <code class="docutils literal"><span class="pre">RR₁'R₂R₃'R₄</span> <span class="pre">UU₁'U₂U₃'U₄</span> <span class="pre">L'L₁L₂'L₃L₄'</span></code> on a 5x5x5.</p>
+</div>
+<div class="section" id="but-how-do-i-interact-with-the-cube">
+<span id="but-how-do-i-interact-with-the-cube"></span><h2>But how do I interact with the cube?<a class="headerlink" href="#but-how-do-i-interact-with-the-cube" title="Permalink to this headline">¶</a></h2>
+<p>When I first made Cubically, with the memory cube alone and no other way to store data, it was nothing but a console emulator for a Rubik’s Cube. However, I decided I wanted to turn it into an esoteric programming language, so I added one more piece of memory, the notepad. The value “written” on the notepad could be modified based on the different states of the cube. So I introduced the concept of <a class="reference external" href="memory.html">memory locations</a>. Memory location <code class="docutils literal"><span class="pre">0</span></code> would always store the sum of the top face of the cube (the face that’s filled with <code class="docutils literal"><span class="pre">0</span></code>s when the cube is unsolved). Memory location <code class="docutils literal"><span class="pre">1</span></code> would always store the sum of the left face, <code class="docutils literal"><span class="pre">2</span></code> stored the right face sum, etc.</p>
+<p>Try scrambling up the cube and running <code class="docutils literal"><span class="pre">:1</span> <span class="pre">%6</span></code> - <code class="docutils literal"><span class="pre">:1</span></code> to set the notepad to the sum of the left face, and <code class="docutils literal"><span class="pre">%6</span></code> to print the notepad (memory location <code class="docutils literal"><span class="pre">6</span></code>). What did it print? Try a different scramble with the same <code class="docutils literal"><span class="pre">:1</span> <span class="pre">%6</span></code> at the end. See what different values you can get!</p>
+<p>For ease of use, Cubically automatically dumps the memory cube and the notepad at the end of the program. For example, after running the code <code class="docutils literal"><span class="pre">R2L2U2D2F2B2</span></code>, Cubically prints this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Notepad</span><span class="p">:</span> <span class="mi">0</span>
+
+   <span class="mi">050</span>
+   <span class="mi">505</span>
+   <span class="mi">050</span>
+<span class="mi">131242313424</span>
+<span class="mi">313424131242</span>
+<span class="mi">131242313424</span>
+   <span class="mi">505</span>
+   <span class="mi">050</span>
+   <span class="mi">505</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="cubically-sounds-fun-but-how-can-i-actually-use-it">
 <span id="cubically-sounds-fun-but-how-can-i-actually-use-it"></span><h2>Cubically sounds fun, but how can I actually use it?<a class="headerlink" href="#cubically-sounds-fun-but-how-can-i-actually-use-it" title="Permalink to this headline">¶</a></h2>
-<p>You can download the interpreter in the <a class="reference external" href="//git.io/Cubically">GitHub repo</a>. You need GCC and Make installed.</p>
+<p>You can download the interpreter in the <a class="reference external" href="https://git.io/Cubically">GitHub repo</a>. You need <a class="reference external" href="https://www.gnu.org/software/gcc/">GCC</a> and <a class="reference external" href="https://www.gnu.org/software/make/">Make</a> installed.</p>
 <p>You can also use the <a class="reference external" href="https://tio.run/##Sy5NykxOzMmp/P8/KOhRU6M6kGgC4mYQo0UhNBQkBiSaQkFioSAxH3UfoCAQN4EYzUDcov7//39TAA">online interpreter</a>, thanks to <a class="reference external" href="https://codegolf.stackexchange.com/users/12012/dennis">Dennis</a> of <a class="reference external" href="//codegolf.stackexchange.com">Programming Puzzles and Code Golf</a>, where you can find many <a class="reference external" href="https://codegolf.stackexchange.com/search?q=cubically+is%3Aanswer">fun Cubically programs</a> in friendly competition.</p>
 </div>
 <div class="section" id="who-s-responsible-for-this-mess">

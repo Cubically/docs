@@ -8,114 +8,94 @@
  - [Inner layers](layers.html)
  - [Syntax](syntax.html)
 
-## Command types
+Below are tables containing Cubically's commands. You can find them all formatted in a simple table in the [quick reference](quickref.html).
 
-There are three types of commands:
+ - **Name** - the short, capitalized name of the command
+ - **Char** - the character(s) in the source that call the command
+ - **Arg *n*** - what the command does when called with argument *n*
+ - **Implicit** - what the command does when called without arguments
 
- - Standard commands
- - Implicit commands
- - Special commands
+### Cube commands
 
-Standard commands follow the traditional Cubically syntax - the command sets the default command, and integers call the command with the integer as the argument.
+|Char|Name|Arg *n*|Implicit|
+|-|-|-|-|
+|`R`|`RIGHT`|rotate the right face 90&deg; clockwise *n* times|*n* = 1|
+|`L`|`LEFT`|rotate the left face 90&deg; clockwise *n* times|*n* = 1|
+|`U`|`UP`|rotate the top face 90&deg; clockwise *n* times|*n* = 1|
+|`D`|`DOWN`|rotate the bottom face 90&deg; clockwise *n* times|*n* = 1|
+|`F`|`FRONT`|rotate the front face 90&deg; clockwise *n* times|*n* = 1|
+|`B`|`BACK`|rotate the back face 90&deg; clockwise *n* times|*n* = 1|
+|`M`|`MID_L`|rotate the middle layer inwards from the left face 90&deg; clockwise *n* times|*n* = 1|
+|`E`|`MID_D`|rotate the middle layer inwards from the bottom face 90&deg; clockwise *n* times|*n* = 1|
+|`S`|`MID_F`|rotate the middle layer inwards from the front face 90&deg; clockwise *n* times|*n* = 1|
 
-Implicit commands may be called without arguments, and are executed as soon as they are present.
+There are two things notable about cube commands:
 
-Special commands may be called either implicitly or with arguments. See some commands of type `special` for examples.
+ - `'` is synonymous to `3` in source code.
+ - Commands can have subscripts and superscripts attached to them. For more information, see [turning inner layers](layers.html).
 
-If a command does not have defined behavior for being called implicitly it will be called with the notepad value - so calling `+` implicitly will call `+6` (double the notepad).
+### General
 
-## Argument types
-
-There are four types of arguments:
-
- - Standard integers
- - Subscript integers
- - Superscript integers
- - Double-struck integers
-
-Standard integers simply call the command with its default call type - if the default call type is with face value, then the command will be called with the face sum of the face whose index is specified by the integer. If the default call type is raw integer, then the command will be called with the integer as it appears.
-
-Subscript integers attach to the current command. When a command is called with subscripts attached, the subscripts act as a second argument, so <code>command<sub>subscript integers</sub>(arguments)</code> acts as <code>command(arguments,subscripts)</code>. Only certain commands may be called with subscript integers, and each command's behavior differs. See some commands that accept subscript integers for more info.
-
-Superscript integers are similar to subscript integers, except they attach the face sum of the face whose index is specified by the superscript integer. So calling <code>command<sup>0</sup>(arguments)</code> where the top face's sum is 5 is like calling <code>command<sub>5</sub>(arguments)</code>.
-
-When a double-struck integer is present, it executes the command (using default call type) with the face sum of the face whose index is specified by the double-struct integer. So <code>command&#x1d7d8;</code> where the top face sum is 1 is like calling `command` with raw integer 1.
-
-# Commands
-
-### Memory
-
-|Command|Type|Description|Call type|Accepts|Arguments|
-|-|-|-|-|-|-|
-|`R`|Special|turn right cube face clockwise 90&deg;|Raw|standard, subscript, superscript, double-struck|number of turns, `'` for 3, implicit for 1|
-|`L`|Special|turn left cube face clockwise 90&deg;|Raw|^|^|
-|`U`|Special|turn top cube face clockwise 90&deg;|Raw|^|^|
-|`D`|Special|turn bottom cube face clockwise 90&deg;|Raw|^|^|
-|`F`|Special|turn front cube face clockwise 90&deg;|Raw|^|^|
-|`B`|Special|turn back cube face clockwise 90&deg;|Raw|^|^|
-|`M`|Special|turn the middle face (left-oriented) clockwise 90&deg;|Raw|^|^|
-|`E`|Special|turn the middle face (down-oriented) clockwise 90&deg;|Raw|^|^|
-|`S`|Special|turn the middle face (front-oriented) clockwise 90&deg;|Raw|^|^|
-
-Subscript integers (and superscript face values) denote the layer to be turned. That is, when a face turn is called with subscript `x`, the `x`th layer inward from the face will be rotated instead of just the face.
-
-### General/math
-
-|Command|Type|Description|Call type|Accepts|Arguments|
-|-|-|-|-|-|-|
-|`&`|Special|exit if specified face sum/value is truthy|face value|standard|face index (0-8), implicit exits unconditionally|
-|`+`|Standard|add all values of specified face together, add to notepad value, write result on notepad|face value|standard|face index (0-8)|
-|`-`|Standard|add all values of specified face together, subtract from notepad value, write result on notepad|face value|standard|^|
-|`*`|Standard|add all values of specified face together, multiply by notepad value, write result on notepad|face value|standard|^|
-|`/`|Standard|add all values of specified face together, divide notepad value by, write result on notepad|face value|standard|^|
-|`_`|Standard|set notepad to (notepad modulo faceval)|face value|standard|^|
-|`^`|Standard|set the notepad value to (notepad ^ faceval) where ^ represents the exponent|face value|standard|^|
-|`=`|Standard|compare notepad and specified face for equality, write result on notepad|face value|standard|^|
-|`<`|Standard|set the notepad to (notepad < faceval)|face value|standard|^|
-|`>`|Standard|set the notepad to (notepad > faceval)|face value|standard|^|
-|<code>&#x2295;</code>|Standard|set the notepad to (notepad ^ faceval) where ^ represents the logical XOR|face value|standard|^|
-|<code>&laquo;</code>|Standard|set the notepad to (notepad << faceval)|face value|standard|^|
-|<code>&raquo;</code>|Standard|set the notepad to (notepad >> faceval)|face value|standard|^|
-|<code>&#xb7;</code>|Standard|set the notepad to (notepad &#xb7; faceval) where &#xb7; represents the logical AND|face value|standard|^|
-|`` | ``|Standard|set the notepad to (notepad \| faceval) where `` | `` represents the logical OR|face value|standard|^|
-|`:`|Standard|set notepad to specified face index's sum|^|
-|`¶`|Standard|Read a string and evaluate it|N/A|standard|None, call implicitly|
+|Char|Name|Arg *n*|Implicit|
+|-|-|-|-|
+|`&`|`EXIT`|exit if the value of memory location *n* is nonzero|*n* = 6|
+|`+`|`ADD`|notepad `+=` memory location *n*|*n* = 6|
+|`-`|`SUB`|notepad `-=` memory location *n*|*n* = 7|
+|`*`|`MUL`|notepad `*=` memory location *n*|*n* = 6|
+|`/`|`DIV`|notepad `/=` memory location *n*|*n* = 7|
+|`_`|`MOD`|notepad `%=` memory location *n*|*n* = 6|
+|`^`|`POW`|notepad `**=` memory location *n*|*n* = 6|
+|`=`|`EQ`|notepad = (notepad == memory location *n*)|*n* = 7|
+|`<`|`LT`|notepad = (notepad < memory location *n*)|*n* = 7|
+|`>`|`GT`|notepad = (notepad > memory location *n*)|*n* = 7|
+|`⊕`|`XOR`|notepad = (notepad ⊕ memory location *n*)|*n* = 6|
+|`«`|`LSHIFT`|notepad `<<=` memory location *n*|*n* = 6|
+|`»`|`RSHIFT`|notepad `>>=` memory location *n*|*n* = 6|
+|`·`|`AND`|notepad `&=` memory location *n*|*n* = 6|
+|`` | ``|`OR`|notepad `` |= `` memory location *n*|*n* = 6|
+|`:`|`SET`|notepad = memory location *n*|*n* = 7|
 
 ### I/O
 
-|Command|Type|Description|Call type|Accepts|Arguments|
-|-|-|-|-|-|-|
-|`@`|Standard|add all values of specified face together, print as ASCII|face value|standard|face index (0-7), implicit for 6|
-|`%`|Standard|add all values of specified face together, print as decimal|face value|standard|^|
-|`$`|Standard|input integer, store in input buffer (index 7)|raw|standard|implicit. when called with number, perform that many times|
-|`~`|Standard|input character, store in input buffer (index 7)|raw|standard|^|
+|Char|Name|Arg *n*|Implicit|
+|-|-|-|-|
+|`@`|`PUTCHAR`|print memory location *n* as an ASCII character|*n* = 6|
+|`%`|`PRINT`|print memory location *n* as an integer|*n* = 6|
+|`$`|`READ`|read an integer into input buffer *n* times|*n* = 1|
+|`~`|`GETCHAR`|read an ASCII character into input buffer *n* times|*n* = 1|
+
+---
+
+Here are commands that have special behavior:
 
 ### Loops
 
-|Command|Type|Description|Call type|Accepts|Arguments|
-|-|-|-|-|-|-|
-|`(`|Special|create jump point with arguments. if none, create a point that can be jumped to freely. with face indexes, create a point that can be jumped to if any provided face has a truthy sum.|face value|standard|any number of face indexes (0-7)|
-|`)`|Special|jump back to previous jump point with arguments. if none, jump back if previous jump point can be jumped to. with face indexes, jump to previous point if both it can be jumped to and if every provided face has a truthy sum.|face value|standard|^|
+`(` and `)` make up loops.
 
-A better explanation of loops:
+ - `(...)` will execute the code `...` forever.
+ - `(0...)` will execute the code `...` if the memory location 0 is nonzero, and loop while that is still 
 
- - `(...)` will be an infinite loop.
- - `(0...)` loops as long as the top face has a nonzero sum.
- - `(12...)34` is a loop as long as both `1 || 2` and `3 || 4` is truthy. (numbers are face indexes)
+true.
+ - `(...)0` will execute the code `...`, and loop while memory location 0 is nonzero.
+ - `(12...)34` will execute the code `...` if either the memory location 1 or 2 is nonzero, and loop while 
+
+(memory location 1 or memory location 2) and (memory location 3 or memory location 4) are nonzero.
 
 ### Conditionals
 
-|Command|Type|Description|Call type|Accepts|Arguments|
-|-|-|-|-|-|-|
-|`?`|Standard|execute next command or code block if specified face is truthy|face value|standard|face index (0-7)|
-|`!`|Special|execute next command or code block if specified face is falsy. also can be used as if-else statement as specified below|face value|standard|face index (0-7) or nothing|
-|`{`|Implicit|open a code block|N/A|N/A|N/A|
-|`}`|Implicit|close a code block|N/A|N/A|N/A|
+`?` is an `if-nonzero` conditional. `!` is an `if-zero` conditional.
+
+ - `?6.` will execute `.` if memory location 6 is nonzero.
+ - `!6.` will execute `.` if memory location 6 is zero.
+ - `?6{...}` will execute `...` if memory location 6 is nonzero.
+ - `!6{...}` will execute `...` if memory location 6 is zero.
+
+Note that if `?` and `!` when called implicitly are equivalent to `?6` and `!6`, respectively.
 
 ### Functions
 
-|Command|Type|Description|Call type|Accepts|Arguments|
-|-|-|-|-|-|-|
-|`f`|Standard|execute function specified in argument|raw|standard|function to call|
+`f` calls a function. Unlike the rest of the commands in Cubically, `f` can be called with multiple-digit 
 
-See [Functions](functions.html) for more information.
+numbers.
+
+See [functions](functions.html) for more information.

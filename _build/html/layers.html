@@ -50,7 +50,7 @@
 <li><a class="reference external" href="layers.html">Inner layers</a></li>
 <li><a class="reference external" href="syntax.html">Syntax</a></li>
 </ul>
-<p><code class="docutils literal"><span class="pre">RₙX</span></code>, where <code class="docutils literal"><span class="pre">n</span></code> is a subscript number, means:</p>
+<p><code class="docutils literal"><span class="pre">RₙX</span></code>, where <code class="docutils literal"><span class="pre">n</span></code> is a subscript number and <code class="docutils literal"><span class="pre">X</span></code> is a digit, means:</p>
 <blockquote>
 <div>perform X clockwise right turns on the n’th layer inward from the right face</div></blockquote>
 <p>Examples:</p>
@@ -93,12 +93,20 @@ Cube (4x4):
 </pre></div>
 </div>
 <p>If <code class="docutils literal"><span class="pre">n</span></code> is larger than or equal to the size of the cube, it will act as a no-op. For example, <code class="docutils literal"><span class="pre">R³2</span></code> on a 3x3x3 would be a no-op, but on a 4x4x4, it would turn the third face inward from the right face.</p>
-<p><code class="docutils literal"><span class="pre">RⁿX</span></code>, where <code class="docutils literal"><span class="pre">n</span></code> is a superscript number, means:</p>
+<p><code class="docutils literal"><span class="pre">RⁿX</span></code>, where <code class="docutils literal"><span class="pre">n</span></code> is a superscript number and <code class="docutils literal"><span class="pre">X</span></code> is a digit, means:</p>
 <blockquote>
-<div>perform X clockwise turns on the m’th layer inward from the right face, where m is the face sum of n-indexed face</div></blockquote>
+<div>perform X clockwise turns on the m’th layer inward from the right face, where m is the value of memory location n.</div></blockquote>
 <p>So, if the notepad was 1, <code>R<p>⁶</p>
 2</code> would turn the middle face on a 3x3x3 twice.</p>
 <p>Combining superscripts and subscripts will result in undefined behavior. Each version of the interpreter handles sub/superscript integration differently. You should never combine subscripts and superscripts in the same command so the behavior will never be defined.</p>
+<p>For a fun example of superscripts and double-struck integers, try running this code with any cube size (providing the single-integer cube size as input):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$
+: (R⁶𝟞𝟞 *1-1/1)6
+: (U⁶𝟞𝟞 *1-1/1)6
+: (F⁶𝟞𝟞 *1-1/1)6
+</pre></div>
+</div>
+<p><a class="reference external" href="https://tio.run/##Sy5NykxOzMmp/P9fhctKQSPoUeO2D3PnzwNhBS1DXUN9Q00zkEQoLgk3bBL//xuaAhEA">Try it online!</a></p>
 </div>
 
 

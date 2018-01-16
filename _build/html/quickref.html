@@ -1,0 +1,125 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>&lt;no title&gt; &#8212; Cubically 3.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>|Char|Name|Arg <em>n</em>|Implicit|
+|-|-|-|-|
+|<code class="docutils literal"><span class="pre">R</span></code>|<code class="docutils literal"><span class="pre">RIGHT</span></code>|rotate the right face 90<p>°</p>
+ clockwise <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">L</span></code>|<code class="docutils literal"><span class="pre">LEFT</span></code>|rotate the left face 90<p>°</p>
+ clockwise <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">U</span></code>|<code class="docutils literal"><span class="pre">UP</span></code>|rotate the top face 90<p>°</p>
+ clockwise <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">D</span></code>|<code class="docutils literal"><span class="pre">DOWN</span></code>|rotate the bottom face 90<p>°</p>
+ clockwise <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">F</span></code>|<code class="docutils literal"><span class="pre">FRONT</span></code>|rotate the front face 90<p>°</p>
+ clockwise <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">B</span></code>|<code class="docutils literal"><span class="pre">BACK</span></code>|rotate the back face 90<p>°</p>
+ clockwise <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">M</span></code>|<code class="docutils literal"><span class="pre">MID_L</span></code>|rotate the middle layer inwards from the left face 90<p>°</p>
+ clockwise <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">E</span></code>|<code class="docutils literal"><span class="pre">MID_D</span></code>|rotate the middle layer inwards from the bottom face 90<p>°</p>
+ clockwise <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">S</span></code>|<code class="docutils literal"><span class="pre">MID_F</span></code>|rotate the middle layer inwards from the front face 90<p>°</p>
+ clockwise <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">&amp;</span></code>|<code class="docutils literal"><span class="pre">EXIT</span></code>|exit if the value of memory location <em>n</em> is nonzero|<em>n</em> = 6|
+|<code class="docutils literal"><span class="pre">+</span></code>|<code class="docutils literal"><span class="pre">ADD</span></code>|notepad <code class="docutils literal"><span class="pre">+=</span></code> memory location <em>n</em>|<em>n</em> = 6|
+|<code class="docutils literal"><span class="pre">-</span></code>|<code class="docutils literal"><span class="pre">SUB</span></code>|notepad <code class="docutils literal"><span class="pre">-=</span></code> memory location <em>n</em>|<em>n</em> = 6|USELESS IMPLICITLY|
+|<code class="docutils literal"><span class="pre">*</span></code>|<code class="docutils literal"><span class="pre">MUL</span></code>|notepad <code class="docutils literal"><span class="pre">*=</span></code> memory location <em>n</em>|<em>n</em> = 6|
+|<code class="docutils literal"><span class="pre">/</span></code>|<code class="docutils literal"><span class="pre">DIV</span></code>|notepad <code class="docutils literal"><span class="pre">/=</span></code> memory location <em>n</em>|<em>n</em> = 6|USELESS IMPLICITLY|
+|<code class="docutils literal"><span class="pre">_</span></code>|<code class="docutils literal"><span class="pre">MOD</span></code>|notepad <code class="docutils literal"><span class="pre">%=</span></code> memory location <em>n</em>|<em>n</em> = 6|USELESS IMPLICITLY|
+|<code class="docutils literal"><span class="pre">^</span></code>|<code class="docutils literal"><span class="pre">POW</span></code>|notepad <code class="docutils literal"><span class="pre">**=</span></code> memory location <em>n</em>|<em>n</em> = 6|
+|<code class="docutils literal"><span class="pre">=</span></code>|<code class="docutils literal"><span class="pre">EQ</span></code>|notepad = (notepad == memory location <em>n</em>)|<em>n</em> = 7|
+|<code class="docutils literal"><span class="pre">&lt;</span></code>|<code class="docutils literal"><span class="pre">LT</span></code>|notepad = (notepad &lt; memory location <em>n</em>)|<em>n</em> = 7|PROBABLY|
+|<code class="docutils literal"><span class="pre">&gt;</span></code>|<code class="docutils literal"><span class="pre">GT</span></code>|notepad = (notepad &gt; memory location <em>n</em>)|<em>n</em> = 7|PROBABLY
+|<code class="docutils literal"><span class="pre">⊕</span></code>|<code class="docutils literal"><span class="pre">XOR</span></code>|notepad = (notepad ⊕ memory location <em>n</em>)|<em>n</em> = 6|USELESS IMPLICITLY|
+|<code class="docutils literal"><span class="pre">«</span></code>|<code class="docutils literal"><span class="pre">LSHIFT</span></code>|notepad <code class="docutils literal"><span class="pre">&lt;&lt;=</span></code> memory location <em>n</em>|<em>n</em> = 6|USELESS IMPLICITLY|
+|<code class="docutils literal"><span class="pre">»</span></code>|<code class="docutils literal"><span class="pre">RSHIFT</span></code>|notepad <code class="docutils literal"><span class="pre">&gt;&gt;=</span></code> memory location <em>n</em>|<em>n</em> = 6|USELESS IMPLICITLY|
+|<code class="docutils literal"><span class="pre">·</span></code>|<code class="docutils literal"><span class="pre">AND</span></code>|notepad <code class="docutils literal"><span class="pre">&amp;=</span></code> memory location <em>n</em>|<em>n</em> = 6|USELESS IMPLICITLY|
+|<code class="docutils literal"><span class="pre">|</span></code>|<code class="docutils literal"><span class="pre">OR</span></code>|notepad <code class="docutils literal"><span class="pre">|=</span></code> memory location <em>n</em>|<em>n</em> = 6|USELESS IMPLICITLY|
+|<code class="docutils literal"><span class="pre">:</span></code>|<code class="docutils literal"><span class="pre">SET</span></code>|notepad = memory location <em>n</em>|<em>n</em> = 7|
+|<code class="docutils literal"><span class="pre">&#64;</span></code>|<code class="docutils literal"><span class="pre">PUTCHAR</span></code>|print memory location <em>n</em> as an ASCII character|<em>n</em> = 6|
+|<code class="docutils literal"><span class="pre">%</span></code>|<code class="docutils literal"><span class="pre">PRINT</span></code>|print memory location <em>n</em> as an integer|<em>n</em> = 6|
+|<code class="docutils literal"><span class="pre">$</span></code>|<code class="docutils literal"><span class="pre">READ</span></code>|read an integer into input buffer <em>n</em> times|<em>n</em> = 1|
+|<code class="docutils literal"><span class="pre">~</span></code>|<code class="docutils literal"><span class="pre">GETCHAR</span></code>|read an ASCII character into input buffer <em>n</em> times|<em>n</em> = 1|</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, MD XF.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/quickref.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
