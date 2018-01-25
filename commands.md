@@ -64,6 +64,16 @@ There are two things notable about cube commands:
 |`$`|`READ`|read an integer into input buffer *n* times|*n* = 1|
 |`~`|`GETCHAR`|read an ASCII character into input buffer *n* times|*n* = 1|
 
+### Miscellaneous
+
+|Char|Name|Behavior|
+|-|-|-|
+|`▦`|`SOLVE`|insert moves to solve the cube from the current state at the current point in the code|
+|`■`|`PRINTCUBE`|print the cube|
+|`¶`|`EVAL`|read a line from stdin and insert it into the code|
+
+None of these commands take arguments.
+
 ---
 
 Here are commands that have special behavior:
